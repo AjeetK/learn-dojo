@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Learning Dojo</title>
+    <!--Below line includes the dojo.js files from the directory dojoroot/dojo/ -->
+    <script src="dojoroot/dojo/dojo.js">
+</script>
+
+</head>
+<body>
+<h1>Learning Dojo</h1>
+<div id="message">Following are some features of dojo</div>
+<ul id="list">
+    <li>Rich Internet application, saving development time</li>
+    <li class="highlight">Dojo have widget library and object oriented features which helps to build a AJAX powered web application</li>
+    <li>Extremely light-weight</li>
+</ul>
+
+</script>
+<script>
+/*Here dojo.onLoad is a function which will create a div on this page gets loaded and will add the text Hello learner.... to the body of this page. */
+dojo.addOnLoad(function() {
+    dojo.create(
+        "div",
+        {
+            "innerHTML": "Hello, Learner. I hope you are enjoying dojo!"
+        },
+        dojo.body()
+    );
+});
+</script>
+</body>
+</html>

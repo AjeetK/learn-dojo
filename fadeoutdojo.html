@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Learning Dojo</title>
+    <script src="dojoroot/dojo/dojo.js">
+</script>
+
+</head>
+<body>
+<h1>Learning Dojo</h1>
+<div id="message">Following are some features of dojo</div>
+<ul id="list">
+    <li>Rich Internet application, saving development time</li>
+    <li class="highlight">Dojo have widget library and object oriented features which helps to build a AJAX powered web application</li>
+    <li>Extremely light-weight</li>
+</ul>
+<div id="show"></div>
+<button id="m">show</button>
+</script>
+<script>
+dojo.addOnLoad(function() {
+    dojo.create(
+        "div",
+        {
+            "innerHTML": "Hello, Learner. I hope you are enjoying dojo!"
+        },
+        dojo.body()
+    );
+});
+dojo.fadeOut({
+node: dojo.byId("message"),
+duration: 600
+}).play();
+
+dojo.query("#list li").forEach(function(item) {
+dojo.create(
+        "div",
+        {
+            "innerHTML": item.innerHTML
+
+        },
+        dojo.body()
+    );
+});
+
+var message = dojo.byId("m");
+dojo.connect(message, "onclick", function() {
+alert(message.innerHTML);
+});
+
+
+</script>
+</body>
+</html>
