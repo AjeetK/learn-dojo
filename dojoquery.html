@@ -13,7 +13,8 @@
     <li class="highlight">Dojo have widget library and object oriented features which helps to build a AJAX powered web application</li>
     <li>Extremely light-weight</li>
 </ul>
-
+<div id="show"></div>
+<button id="m">show</button>
 </script>
 <script>
 dojo.addOnLoad(function() {
@@ -27,9 +28,24 @@ dojo.addOnLoad(function() {
 });
 dojo.fadeOut({
 node: dojo.byId("message"),
-duration: 6000
+duration: 600
 }).play();
 
+
+
+var message = dojo.byId("m");
+dojo.connect(message, "onclick", function() {
+    dojo.query("#list li").forEach(function(item) {
+    dojo.create(
+        "div",
+        {
+            "innerHTML": item.innerHTML
+
+        },
+        dojo.body()
+    );
+});
+});
 
 
 </script>
